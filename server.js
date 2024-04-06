@@ -8,7 +8,7 @@ app.use(express.static('./dist/biodiversity-footprint'));
 
 app.get('/*', (req, res) => {
   // res.sendFile(path.join(__dirname + '/dist/biodiverstity-footprint/index.html'));
-  res.sendFile('index.html', { root: './dist/biodiverstity-footprint' });
+  res.sendFile('index.html', { root: './dist/biodiverstity-footprint/browser' });
 });
 
 app.listen(process.env.PORT || 8080);
