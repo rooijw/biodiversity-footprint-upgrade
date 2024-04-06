@@ -2,8 +2,7 @@
 
 const express = require('express');
 const app = express();
-const fs = require('fs-extra'); 
-fs.move('dist/biodiversity-footprint/browser', 'dist/biodiversity-footprint', (err) => { if(err) { return console.error(err); } });
+
 // app.use(express.static(__dirname + '/dist/biodiverstity-footprint'));
 app.use(express.static('./dist/biodiversity-footprint'));
 
