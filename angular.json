@@ -40,7 +40,8 @@
             "scripts": []
           },
           "configurations": {
-            "production": {
+            "production": { 
+              "deleteOutputPath": true,
               "budgets": [
                 {
                   "type": "initial",
