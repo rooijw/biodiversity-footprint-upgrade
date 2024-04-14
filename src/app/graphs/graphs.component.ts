@@ -45,22 +45,20 @@ export class GraphsComponent implements OnInit {
       },
       scales: {
         x: {
-          scaleLabel: {
+          title: {
             display: true,
             fontSize: 18,
-            labelString: 'Scenarios'
+            text: 'Scenarios'
           },
           stacked: true
         },
         y: {
-          scaleLabel: {
+          title: {
             display: true,
             fontSize: 18,
-            labelString: 'Biodiversity impact (MSA.ha)'
+            text: 'Biodiversity impact (MSA.ha)'
           },
-          ticks: {
-            beginAtZero: true
-          },
+          beginAtZero: true,
           stacked: true
         }
       }
