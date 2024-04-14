@@ -13,7 +13,10 @@ import { FormsModule } from '@angular/forms';
 import { ScenarioComponent} from './scenario/scenario.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TransportItemComponent } from './items/transport-item/transport-item.component';
-
+import { MatTooltipModule} from '@angular/material/tooltip';
+import { MatButtonModule } from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -31,9 +34,14 @@ import { TransportItemComponent } from './items/transport-item/transport-item.co
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTooltipModule,
+    MatButtonModule,
+    MatIconModule
     ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

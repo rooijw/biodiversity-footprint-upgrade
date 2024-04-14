@@ -84,7 +84,7 @@ export class ScenarioComponent implements OnInit {
     if (this.id != 0) {
       this.animate = "false";
     }
-    console.log(this.cpyInfo)
+    
     //if scenario is being copied fill out new scenario with copy info
     if (this.cpyInfo) {
       this.title = this.cpyInfo.name + "(copy" + this.id + ")";
@@ -211,9 +211,9 @@ export class ScenarioComponent implements OnInit {
     if ($event.impactArea === "Land use") {
 
       let msa = 0;
-      if ($event.economicAlocation && $event.economicAlocation != "") {
-        let ea: number = $event.economicAlocation;
-        if (!($event.economicAlocation <= 10 && $event.economicAlocation >= 0)) {
+      if ($event.economicAllocation && $event.economicAllocation != "") {
+        let ea: number = $event.economicAllocation;
+        if (!($event.economicAllocation <= 10 && $event.economicAllocation >= 0)) {
           ea = 1;
         }
         msa = $event.amount * (1 - $event.MSA) * ea;
@@ -234,9 +234,9 @@ export class ScenarioComponent implements OnInit {
     } else if ($event.impactArea === "Green house gas") {
 
       let msa = 0;
-      if ($event.economicAlocation != undefined && $event.economicAlocation != null && $event.economicAlocation != "") {
-        let ea: number = $event.economicAlocation;
-        if (!($event.economicAlocation <= 10 && $event.economicAlocation >= 0)) {
+      if ($event.economicAllocation != undefined && $event.economicAllocation != null && $event.economicAllocation != "") {
+        let ea: number = $event.economicAllocation;
+        if (!($event.economicAllocation <= 10 && $event.economicAllocation >= 0)) {
           ea = 1;
         }
         msa = $event.amount * $event.MSA * ea * 0.000032881;
@@ -284,9 +284,9 @@ export class ScenarioComponent implements OnInit {
     if ($event.impactArea === "Land use") {
 
       let msa = 0;
-      if ($event.economicAlocation != undefined && $event.economicAlocation != null && $event.economicAlocation != "") {
-        let ea: number = $event.economicAlocation;
-        if (!($event.economicAlocation <= 10 && $event.economicAlocation >= 0)) {
+      if ($event.economicAllocation != undefined && $event.economicAllocation != null && $event.economicAllocation != "") {
+        let ea: number = $event.economicAllocation;
+        if (!($event.economicAllocation <= 10 && $event.economicAllocation >= 0)) {
           ea = 1;
         }
         msa = $event.amount * (1 - $event.MSA) * ea;
@@ -306,9 +306,9 @@ export class ScenarioComponent implements OnInit {
     } else if ($event.impactArea === "Green house gas") {
 
       let msa = 0;
-      if ($event.economicAlocation != undefined && $event.economicAlocation != null && $event.economicAlocation != "") {
-        let ea: number = $event.economicAlocation;
-        if (!($event.economicAlocation <= 10 && $event.economicAlocation >= 0)) {
+      if ($event.economicAllocation != undefined && $event.economicAllocation != null && $event.economicAllocation != "") {
+        let ea: number = $event.economicAllocation;
+        if (!($event.economicAllocation <= 10 && $event.economicAllocation >= 0)) {
           ea = 1;
         }
         msa = $event.amount * $event.MSA * ea * 0.000032881;
@@ -349,11 +349,11 @@ export class ScenarioComponent implements OnInit {
 
   //receive new item info from transport and use formula for transport and create new reuslt with these results
   receiveTransportItemInfo($event: any) {
-
+    console.log($event)  
     let msa = 0;
-    if ($event.economicAlocation != undefined && $event.economicAlocation != null && $event.economicAlocation != "") {
-      let ea: number = $event.economicAlocation;
-      if (!($event.economicAlocation <= 10 && $event.economicAlocation >= 0)) {
+    if ($event.economicAllocation != undefined && $event.economicAllocation != null && $event.economicAllocation != "") {
+      let ea: number = $event.economicAllocation;
+      if (!($event.economicAllocation <= 10 && $event.economicAllocation >= 0)) {
         ea = 1;
       }
       msa = ($event.weight * $event.distance) * $event.msa * 0.000032881 * ea; // add /1000 after $event.weight to calculate with kg and turn them into tons for calc

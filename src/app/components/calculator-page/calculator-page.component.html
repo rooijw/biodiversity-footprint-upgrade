@@ -116,12 +116,9 @@
 
     <button (click)="onAddScenario($event)" class="btn btn-primary btn-lg" style="margin-top: 7px">Add scenario</button>
 
-    <div class="info-tooltip">
-      <span class="info-tooltip-label">i</span>
-      <span class="tooltip-text">If you wish to add another scenario (eg. future scenario) press this button.
-      </span>
-    </div>
-
+    <button  mat-icon-button matTooltipPosition="below" matTooltip="If you wish to add another scenario (eg. future scenario) press this button.">
+      <mat-icon aria-hidden="false" fontIcon="info"></mat-icon>
+    </button>
   </section>
 
 
@@ -136,11 +133,8 @@
         can be added again by clicking on the factor name again.</span>
       <p>Extra filtering options for the graphs can be found below the graph. The numerical biodiversity impact values for each
         scenario and factor can be found in the tables further below.</p>
-
-      <app-graphs [scenarios]="scenarios"></app-graphs>
-
-
-      <div class="card-group" style="margin-top: 30px">
+        <app-graphs [scenarios]="scenarios"></app-graphs>
+      <div class="card-group" style="margin-top: 40px">
         <div class="card text-center" style="width: 18rem;">
           <div class="card-body">
             <h5 class="card-title">Land use</h5>
@@ -225,10 +219,10 @@
       </tbody>
     </table>
     <button (click)="download($event, in)" class="btn btn-primary btn-lg" style="margin-top: 7px">Export Data</button>
-    <div class="info-tooltip">i
-      <span class="tooltip-text">Your data will be exported as an excel file.
-      </span>
-    </div>
+   
+    <button  mat-icon-button matTooltipPosition="below" matTooltip="Your data will be exported as an excel file.">
+      <mat-icon aria-hidden="false" fontIcon="info"></mat-icon>
+    </button>
 
 
   </div>

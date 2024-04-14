@@ -2,6 +2,9 @@
   
   <div class="form-group">
     <h2 for="scenarioName" style="display:  inline-block">Scenario name</h2>
+    <!--button mat-icon-button (click)="deleteScenario()">
+      <mat-icon aria-hidden="false" fontIcon="cancel"></mat-icon>
+    </button-->
     <span id="xButton" (click)="deleteScenario()">X</span>
     <span #collapseButton id="collapseButton" class="collapseButton{{id}}" (click)="collapseScenario(id)">V</span>
     <span id="copyButton" class="copyButton{{id}}" (click)="copyButtonPressed(id)"><img
@@ -15,10 +18,9 @@
     <form>
       <div class="form-group">
         <h3 for="productDescription" style="display:inline-block">Product description</h3>
-        <div class="info-tooltip">i
-          <span class="tooltip-text">Enter the name of the product for which the footprint is calculated in this scenario.
-          </span>
-        </div>
+        <button  mat-icon-button matTooltipPosition="below" matTooltip="Enter the name of the product for which the footprint is calculated in this scenario.">
+          <mat-icon aria-hidden="false" fontIcon="info"></mat-icon>
+        </button>
         <input ngModel name="productDescription" [(ngModel)]="desc" 
                (change)="updateProductDescription(productDescription)" type="text"
                id="productDescription{{id}}" class="form-control"
@@ -40,9 +42,9 @@
         <label>
           <input type="radio" name="calculationPlace" [ngModel]="radioButton" [value]="4" (click)="radioClick(4)"> All
         </label>
-        <div class="info-tooltip">i
-          <span class="tooltip-text">Select the process for which you would like to calculate the footprint. Select ALL in case you want to calculate the footprint for all processes. In that case the results will be displayed together in one graph.</span>
-        </div>
+        <button  mat-icon-button matTooltipPosition="below" matTooltip="Select the process for which you would like to calculate the footprint. Select ALL in case you want to calculate the footprint for all processes. In that case the results will be displayed together in one graph.">
+          <mat-icon aria-hidden="false" fontIcon="info"></mat-icon>
+        </button>
       </div>
       <hr/>
     </form>
@@ -60,13 +62,12 @@
       <button id="add-supp-item-b" type="button" [disabled]=addSupplyChainButtonDisabled class="btn btn-default btn-lg my-2"
               (click)="onAddSupplyChainItem()">Add item
       </button>
-      <div class="info-tooltip">i
-        <span class="tooltip-text">If you want to add another land use item or greenhouse gas factor for this part of the chain press this button.
-        </span>
-      </div>
+      <button  mat-icon-button matTooltipPosition="below" matTooltip="If you want to add another land use item or greenhouse gas factor for this part of the chain press this button.">
+        <mat-icon aria-hidden="false" fontIcon="info"></mat-icon>
+      </button>
 
-      <div routerLink="/methodology" fragment="section-5">
-        <p>If you are not sure which type is appropriate for you, <a href="#section-5"> press this link </a> and look at
+      <div >
+        <p>If you are not sure which type is appropriate for you, <a href="#methodology#section-5" target="_blank"> press this link </a> and look at
           the corresponding table with descriptions of each type.</p>
       </div>
 
@@ -91,12 +92,11 @@
       <button id="add-prod-item-b" (click)="onAddProductionSiteItem()" class="btn btn-default btn-lg my-3">Add
         item
       </button>
-      <div class="info-tooltip">i
-        <span class="tooltip-text">If you want to add another land use item or GHG factor for this part of the chain press this button.
-        </span>
-      </div>
-      <div routerLink="/methodology" fragment="section-5">
-        <p>If you are not sure which type is appropriate for you, <a href="#section-5"> press this link </a> and look at
+      <button  mat-icon-button matTooltipPosition="below" matTooltip="If you want to add another land use item or GHG factor for this part of the chain press this button.">
+        <mat-icon aria-hidden="false" fontIcon="info"></mat-icon>
+      </button>
+      <div>
+        <p>If you are not sure which type is appropriate for you, <a href="#methodology#section-5" target="_blank"> press this link </a> and look at
           our table that describes each type.</p>
       </div>
     </div>
@@ -119,10 +119,9 @@
       </ul>
       <button id="add-tr-item-b" (click)="onAddTransportItem()" class="btn btn-default btn-lg my-3">Add item
       </button>
-      <div class="info-tooltip">i;
-        <span class="tooltip-text">If you want to add another land use item or GHG factor for this part of the chain press this button.
-        </span>
-      </div>
+      <button  mat-icon-button matTooltipPosition="below" matTooltip=">If you want to add another land use item or GHG factor for this part of the chain press this button.">
+        <mat-icon aria-hidden="false" fontIcon="info"></mat-icon>
+      </button>
     </div>
   </div>
 </section>

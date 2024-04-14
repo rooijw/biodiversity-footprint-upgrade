@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, SimpleChange, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import * as $ from 'jquery';
 import res from "../../../assets/res.json";
 
 @Component({
@@ -28,7 +27,10 @@ import res from "../../../assets/res.json";
         }))
       ])
     ])
-  ]
+  ],
+
+
+
 })
 export class TransportItemComponent implements OnInit {
   @Output() changesEvent = new EventEmitter<any>();
@@ -44,7 +46,7 @@ export class TransportItemComponent implements OnInit {
   distance: number;
   weight: number;
   other: number;
-  economicAlocation: number;
+  economicAllocation: number;
 
   transportTypes: any[] = [];
   constructor() {
@@ -62,7 +64,7 @@ export class TransportItemComponent implements OnInit {
       this.type = this.cpyData.data.type;
       this.distance = this.cpyData.data.distance;
       this.weight = this.cpyData.data.weight;
-      this.economicAlocation = this.cpyData.economicAlocation;
+      this.economicAllocation = this.cpyData.economicAllocation;
       if(this.cpyData.other){
         this.other = this.cpyData.other;
         this.showOther = true;
@@ -93,13 +95,6 @@ export class TransportItemComponent implements OnInit {
     }
 
     let msa = this.other;
-    if (!this.showOther) {
-      this.res["Transport"].forEach((element: any) => {
-        if (Object.keys(element)[0] == this.type) {
-          result["msa"] = element[this.type]
-        }
-      });
-    }
     let result = {
       id: this.id,
       name: this.name,
@@ -107,9 +102,17 @@ export class TransportItemComponent implements OnInit {
       distance: this.distance,
       weight: this.weight,
       impactArea: "Transport",
-      economicAlocation: this.economicAlocation,
+      economicAllocation: this.economicAllocation,
       msa
     }
+    if (!this.showOther) {
+      this.res["Transport"].forEach((element: any) => {
+        if (Object.keys(element)[0] == this.type) {
+          result["msa"] = element[this.type]
+        }
+      });
+    }
+
 
     this.changesEvent.emit(result);
   }
@@ -127,7 +130,7 @@ export class TransportItemComponent implements OnInit {
       distance: this.distance,
       weight: this.weight,
       impactArea: "Transport",
-      economicAlocation: this.economicAlocation,
+      economicAllocation: this.economicAllocation,
     }
 
   }

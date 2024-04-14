@@ -56,7 +56,7 @@ export class ItemComponent implements OnInit {
   amount: number;
   type = "";
   msa = 0;
-  economicAlocation: number;
+  economicAllocation: number;
   placeholderValue = "Enter value";
   
   
@@ -75,7 +75,7 @@ export class ItemComponent implements OnInit {
       "type": "",
       "amount": 0,
       "MSA": 0,
-      "economicAlocation": 1,
+      "economicAllocation": 1,
     };
   }
 
@@ -110,13 +110,13 @@ export class ItemComponent implements OnInit {
         });
       }
       this.type = this.cpyData.type;
-      this.economicAlocation = this.cpyData.economicAlocation;
+      this.economicAllocation = this.cpyData.economicAllocation;
       this.itemInfo.id = this.id;
       this.itemInfo.name = this.name;
       this.itemInfo.impactArea = this.impactArea;
       this.itemInfo.type = this.type;
       this.itemInfo.amount = this.amount;
-      this.itemInfo.economicAlocation = this.economicAlocation;
+      this.itemInfo.economicAllocation = this.economicAllocation;
 
 
       this.resultChanged();
@@ -189,10 +189,10 @@ export class ItemComponent implements OnInit {
   }
 
   //set item economic allocation and notify that result has changed
-  setItemEconomicAlocation(event: any){
-    const economicAlocation:number = event.target.value;
-    this.economicAlocation = economicAlocation;
-    this.itemInfo.economicAlocation = economicAlocation;
+  setItemEconomicAllocation(event: any){
+    const economicAllocation:number = event.target.value;
+    this.economicAllocation = economicAllocation;
+    this.itemInfo.economicAllocation = economicAllocation;
     this.resultChanged();
   }
 
@@ -214,7 +214,7 @@ export class ItemComponent implements OnInit {
     }else{
       this.itemInfo.MSA = this.other;
     }
-    this.itemInfo.economicAlocation = this.economicAlocation;
+    this.itemInfo.economicAllocation = this.economicAllocation;
     this.changesEvent.emit(this.itemInfo);
   }
 
@@ -245,7 +245,7 @@ export class ItemComponent implements OnInit {
       type: this.type,
       extraInput,
       amount: this.amount,
-      economicAlocation: this.economicAlocation
+      economicAllocation: this.economicAllocation
     };
   }
 }
