@@ -52,29 +52,17 @@ export class CalculatorPageComponent implements OnInit {
   ngOnInit() {
   }
 
-  download($event: any, id: number) {
+  download( id: number, title: string) {
+     /* pass here the table id */
+    const element = document.getElementById("resultTable" + id);
+    const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+
+     /* generate workbook and add the worksheet */
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    XLSX.writeFile(wb, 'Scenario_' + title + '.xlsx');
+
   }
-  //exports the table with certain id
-  // TODO: ombouwen zie voorbeeld hieronder
-  //download($event: any, id: number) {
-    //var tableToExcel = new TableToExcel();
-    //tableToExcel.render("resultTable" + id);
-  //}
-
-  // exportexcel(): void
-  // {
-  //   /* pass here the table id */
-  //   let element = document.getElementById('excel-table');
-  //   const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
-
-  //   /* generate workbook and add the worksheet */
-  //   const wb: XLSX.WorkBook = XLSX.utils.book_new();
-  //   XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
-
-  //   /* save to file */  
-  //   XLSX.writeFile(wb, this.fileName);
-
-  // }
 
   ngAfterViewInit() {
     this.cd.detectChanges(); 

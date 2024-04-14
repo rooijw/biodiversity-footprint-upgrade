@@ -181,12 +181,7 @@
           </div>
         </div>
       </div>
-
-
-
   </section>
-
-
 
   <h2 class="text-center ">Tables</h2>
   <div *ngFor="let result of allResults; let in = index">
@@ -218,13 +213,10 @@
         </tr>
       </tbody>
     </table>
-    <button (click)="download($event, in)" class="btn btn-primary btn-lg" style="margin-top: 7px">Export Data</button>
-   
+    <button (click)="download(in, allResults[in][0].scenarioTitle)" class="btn btn-primary btn-lg" style="margin-top: 7px">Export Data</button>
     <button  mat-icon-button matTooltipPosition="below" matTooltip="Your data will be exported as an excel file.">
       <mat-icon aria-hidden="false" fontIcon="info"></mat-icon>
     </button>
-
-
   </div>
 </div>
 
@@ -234,7 +226,7 @@
 <footer class="page-footer font-small blue pt-4 mt-4">
 
   <div class="footer-copyright text-center py-3" style="background:#bbbab9  ">This is an open source project. Download code from
-    <a href="https://github.com/rooijw/biodiversity-footprint"> Github.</a>
+    <a href="https://github.com/rooijw/biodiversity-footprint-upgrade"> Github.</a>
   </div>
 
 </footer>
